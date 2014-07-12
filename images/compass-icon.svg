@@ -7,8 +7,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="26"
-   width="26"
+   height="32"
+   width="32"
    id="svg2"
    version="1.1"
    inkscape:version="0.47 r22583"
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -59,8 +59,8 @@
      id="namedview16"
      showgrid="false"
      inkscape:zoom="12.836708"
-     inkscape:cx="14.555226"
-     inkscape:cy="10.772231"
+     inkscape:cx="22.267484"
+     inkscape:cy="15.290523"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -69,7 +69,7 @@
      inkscape:guide-bbox="true" />
   <g
      id="g3650"
-     transform="translate(-0.0095663,-0.14623736)">
+     transform="matrix(1.3445092,0,0,1.3445092,-1.4914816,-1.6752371)">
     <path
        transform="matrix(0.96665003,0,0,0.96665003,0.43386864,0.43842661)"
        d="m 24.071592,13.146237 c 0,6.109389 -4.952637,11.062026 -11.062026,11.062026 -6.109388,0 -11.0620257,-4.952637 -11.0620257,-11.062026 0,-6.1093879 4.9526377,-11.0620257 11.0620257,-11.0620257 6.109389,0 11.062026,4.9526378 11.062026,11.0620257 z"

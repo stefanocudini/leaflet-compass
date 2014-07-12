@@ -29,11 +29,13 @@ hr {
 }
 #map {
 	border-radius:.125em;
-	border:2px solid #1978cf;
+	border-top:2px solid #1978cf;
 	box-shadow: 0 0 8px #999;
-	width:600px;
-	height:400px;
-	float:left;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 ul {
 	font-size:.85em;
