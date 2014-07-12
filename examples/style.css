@@ -1,0 +1,94 @@
+body {
+	background:#b5d0d0;
+	color:#285585;
+	font-family:Arial;
+}
+body#home {
+	background:url('../images/back.png') no-repeat top left #b5d0d0;
+	margin-left:150px;
+}
+
+a {
+	color:#1978cf;
+}
+a:hover {
+	color:#fff;
+}
+h2, h3, h4 {
+	white-space:nowrap;
+	margin:1em 0 0 0;
+}
+hr {
+	border:none;
+	margin: 20px 0;
+	clear:both;
+}
+#desc {
+	white-space:nowrap;
+	font-size:1em;
+}
+#map {
+	border-radius:.125em;
+	border:2px solid #1978cf;
+	box-shadow: 0 0 8px #999;
+	width:600px;
+	height:400px;
+	float:left;
+}
+ul {
+	font-size:.85em;
+	margin:0;
+	padding:0;
+}
+li {
+	margin:0 0 2px 18px;
+}
+#post-it {
+	width:8em;
+	height:8em;
+	margin-left:2em;
+	padding:1em;
+	float:left;
+	background:#fbf5bf;
+	border:1px solid #c6bb58;
+	box-shadow: 2px 2px 6px #999;
+	color:#666;
+}
+#copy {
+	position:fixed;
+	z-index:1000;
+	right:150px;
+	top:-6px;
+	font-style:italic;
+	font-size:.85em;
+	padding:5px 8px;
+	background: #ccc;
+	border: 2px solid #3e5585;		
+	border-radius:.7em;
+	opacity: 0.8;		
+}
+#copy a {
+	color:#285585
+}
+#ribbon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	filter: alpha(opacity=80);
+	-khtml-opacity: .8;
+	-moz-opacity: .8;
+	opacity: .8;		
+}
+#content {
+	float:left;
+	margin:0 3em 3em 0;	
+}
+#refs {
+	float:left;
+	margin:0 3em 3em 0;	
+}
+#comments {
+	clear:both;
+}
+

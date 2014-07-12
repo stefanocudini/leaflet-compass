@@ -1,0 +1,16 @@
+{
+	"name": "leaflet-compass",
+	"version": "0.0.1",
+	"main": [
+		"dist/leaflet-compass.min.js",
+		"dist/leaflet-compass.min.css",
+		"images/compass-icon.png"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"components",
+		"bower_components",
+		"examples"
+	]
+}
