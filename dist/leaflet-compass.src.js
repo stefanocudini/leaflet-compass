@@ -1,3 +1,19 @@
+/* 
+ * Leaflet Control Compass v0.0.1 - 2014-07-13 
+ * 
+ * Copyright 2014 Stefano Cudini 
+ * stefano.cudini@gmail.com 
+ * http://labs.easyblog.it/ 
+ * 
+ * Licensed under the MIT license. 
+ * 
+ * Demos: 
+ * http://labs.easyblog.it/maps/leaflet-compass/ 
+ * 
+ * Source: 
+ * git@github.com:stefanocudini/leaflet-compass.git 
+ * 
+ */
 
 (function() {
 

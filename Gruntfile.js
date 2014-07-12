@@ -82,7 +82,7 @@ grunt.initConfig({
     svg2png: {
         all: {
             files: [
-                { src: ['images/*.svg'], dest: 'images/' }
+                { src: ['images/*.svg'] }
             ]
         }
     },	
