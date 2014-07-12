@@ -36,7 +36,7 @@ L.Control.Compass = L.Control.extend({
 	//  deactivate		deactive tracking on runtime
 	//
 	options: {
-		autoActive: false,		//activate control at startup
+		autoActive: true,		//activate control at startup
 		textErr: null,			//error message on alert notification
 		callErr: null,			//function that run on compass error activating
 		position: 'topright'
@@ -62,7 +62,8 @@ L.Control.Compass = L.Control.extend({
 		this._button = L.DomUtil.create('a', 'compass-button', container);
 		this._button.href = '#';
 
-		this._divcompass = this._button;
+		this._divcompass = L.DomUtil.create('div', 'compass-icon', this._button);
+		this._divcompass.src = 'images/compass-icon.png';
 		//TODO change button from rotating image
 
 		L.DomEvent
@@ -102,35 +103,31 @@ L.Control.Compass = L.Control.extend({
 
 		this._divcompass.style.display = 'block';
 
-		navigator.compass.watchHeading(
-				this._rotateCompass,
-				this._errorCompass, {
-					frequency : 10
-				});
+//https://developer.apple.com/library/safari/documentation/SafariDOMAdditions/Reference/DeviceOrientationEventClassRef/DeviceOrientationEvent/DeviceOrientationEvent.html#//apple_ref/javascript/instp/DeviceOrientationEvent/webkitCompassHeading
 
-		//TODO
-		//   this._map.locate({
-		//       enableHighAccuracy: true,
-			// watch: true,
-		//       setView: false,	//automatically sets the map view to the user angle
-			// maxZoom: this.options.maxZoom   
-		//   });
+var self = this;
+window.addEventListener('deviceorientation', function(e) {
+
+	// if (Math.abs(heading - lastHeading)<180) {
+	// 	spinner.style.webkitTransition = 'all 0.2s ease-in-out';
+	// } else {
+	// 	spinner.style.webkitTransition = 'none';
+	// }
+	
+	self._rotateCompass(e.webkitCompassHeading);
+
+	// spinner.style.webkitTransform = 'rotateZ(-' + heading + 'deg)';
+	// lastHeading = heading;
+}, false);
+
 		this.fire('compass_activated');
 	},
 
-	deactivate: function() {
-			this._isActive = false;    
-		this._firstMoved = false;
-		
-		//TODO STOP COMPASS ENGINE this._map.stopLocate();
+	_rotateCompass: function(angle) {
 
-		L.DomUtil.removeClass(this._button, 'active');
-		this.fire('compass_deactivated');
-	},
+//L.DomUtil.get('copy').innerHTML = angle;
 
-	_rotateCompass: function(heading) {
-
-		var angle = 360 - heading.magneticHeading;
+		angle = 360 - angle;
 
 		this._divcompass.style.webkitTransform = "rotate(" + angle + "deg)";
 
@@ -144,6 +141,16 @@ L.Control.Compass = L.Control.extend({
 	_errorCompass: function(e) {
 		this.deactivate();
 		this._errorFunc.call(this, this.options.textErr || e.message);
+	},
+
+	deactivate: function() {
+			this._isActive = false;    
+		this._firstMoved = false;
+		
+		//TODO STOP COMPASS ENGINE this._map.stopLocate();
+
+		L.DomUtil.removeClass(this._button, 'active');
+		this.fire('compass_deactivated');
 	},
 
 	showAlert: function(text) {

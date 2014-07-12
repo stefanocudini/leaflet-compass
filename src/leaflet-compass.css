@@ -18,11 +18,16 @@
 	float:left;
 	width:36px;
 	height:36px;
-	background: url('../images/compass-icon.png') no-repeat 2px 2px;
 	border-radius:4px;
 }
 .leaflet-compass .compass-button.active {
-	background: url('../images/compass-icon.png') no-repeat 2px -50px rgba(255,255,255,0.6);
+	background: #fff;
+}
+.leaflet-compass .compass-icon {
+	height: 32px;
+	width: 32px;
+	margin: 2px;
+	background: url('../images/compass-icon.png') center center no-repeat;
 }
 
 .leaflet-compass .compass-alert {

@@ -1,12 +1,19 @@
 Leaflet.Control.Compass
 ============
 
+##THIS PROJECT IS WORK IN PROGRESS!!  Contribute!
+
 A leaflet control plugin to make simple rotating compass
 
 Tested in Leaflet 0.7
 
-**Demos online:**  
+**Tested platforms:**
+* Safari on iOS 7
+
+**Demo online:**  
 [labs.easyblog.it/maps/leaflet-compass](http://labs.easyblog.it/maps/leaflet-compass/)
+
+![Image](https://raw.githubusercontent.com/stefanocudini/leaflet-compass/master/images/leaflet-compass.png)
 
 #How to use
 
@@ -18,9 +25,6 @@ map.addControl( new L.Control.Compass() );
 ```
 
 #Where
-
-**Demos online:**  
-[labs.easyblog.it/maps/leaflet-compass](http://labs.easyblog.it/maps/leaflet-compass/)
 
 **Source code:**
 [Github](https://github.com/stefanocudini/leaflet-compass)  

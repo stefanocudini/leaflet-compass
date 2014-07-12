@@ -15,17 +15,16 @@
  * 
  */
 
-.leaflet-container .leaflet-compass {
+.leaflet-control.leaflet-compass {
 	position:relative;
 	float:left;
-	background:#fff;
 	color:#1978cf;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 	/*background-color: rgba(0, 0, 0, 0.25);*/
 	background-color: rgba(255, 255, 255, 0.8);
-	z-index:1000;	
+	/*background: none;*/
 	box-shadow: 0 1px 7px rgba(0,0,0,0.65);
 	margin-left:10px;
 	margin-top:10px;
@@ -33,13 +32,18 @@
 .leaflet-compass .compass-button {
 	display:block;
 	float:left;
-	width:26px;
-	height:26px;
-	background: url('../images/compass-icon.png') no-repeat 2px 2px;
+	width:36px;
+	height:36px;
 	border-radius:4px;
 }
 .leaflet-compass .compass-button.active {
-	background: url('../images/compass-icon.png') no-repeat 2px -50px #fff;
+	background: #fff;
+}
+.leaflet-compass .compass-icon {
+	height: 32px;
+	width: 32px;
+	margin: 2px;
+	background: url('../images/compass-icon.png') center center no-repeat;
 }
 
 .leaflet-compass .compass-alert {
