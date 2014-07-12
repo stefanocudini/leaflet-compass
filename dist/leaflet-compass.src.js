@@ -22,11 +22,11 @@ L.Control.Compass = L.Control.extend({
 	includes: L.Mixin.Events, 
 	//
 	//Managed Events:
-	//	Event			Data passed			Description
+	//	Event				Data passed		Description
 	//
-	//	compass_loaded		{angle}				fired after compass data is loaded
-	//	compass_activated						fired when compass is activated
-	//	compass_deactivated						fired when compass is deactivated
+	//	compass_loaded		{angle}			fired after compass data is loaded
+	//	compass_activated					fired when compass is activated
+	//	compass_deactivated					fired when compass is deactivated
 	//
 	//Methods exposed:
 	//	Method 			Description

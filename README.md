@@ -1,8 +1,6 @@
 Leaflet.Control.Compass
 ============
 
-##THIS PROJECT IS WORK IN PROGRESS!!  Contribute!
-
 A leaflet control plugin to make simple rotating compass
 
 Tested in Leaflet 0.7
@@ -27,6 +25,7 @@ map.addControl( new L.Control.Compass() );
 #Where
 
 **Source code:**
+
 [Github](https://github.com/stefanocudini/leaflet-compass)  
 [Bitbucket](https://bitbucket.org/zakis_/leaflet-compass)  
 [NPM](https://npmjs.org/package/leaflet-compass)

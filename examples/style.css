@@ -3,10 +3,6 @@ body {
 	color:#285585;
 	font-family:Arial;
 }
-body#home {
-	background:url('../images/back.png') no-repeat top left #b5d0d0;
-	margin-left:150px;
-}
 
 a {
 	color:#1978cf;
