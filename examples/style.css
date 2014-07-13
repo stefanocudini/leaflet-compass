@@ -90,3 +90,13 @@ li {
 	clear:both;
 }
 
+.box {
+	float:left;
+	margin:0 10px;
+}
+.screenshot {
+	background:#fff;
+	padding:8px;
+	margin:8px;
+	box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
