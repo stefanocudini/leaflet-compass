@@ -87,22 +87,15 @@ L.Control.Compass = L.Control.extend({
 
 		this._divcompass.style.display = 'block';
 
-//https://developer.apple.com/library/safari/documentation/SafariDOMAdditions/Reference/DeviceOrientationEventClassRef/DeviceOrientationEvent/DeviceOrientationEvent.html#//apple_ref/javascript/instp/DeviceOrientationEvent/webkitCompassHeading
+		//API DOC
+		//	http://goo.gl/5wfxN2
+		//
+		var self = this;
+		window.addEventListener('deviceorientation', function(e) {
+			
+			self._rotateCompass(e.webkitCompassHeading);
 
-var self = this;
-window.addEventListener('deviceorientation', function(e) {
-
-	// if (Math.abs(heading - lastHeading)<180) {
-	// 	spinner.style.webkitTransition = 'all 0.2s ease-in-out';
-	// } else {
-	// 	spinner.style.webkitTransition = 'none';
-	// }
-	
-	self._rotateCompass(e.webkitCompassHeading);
-
-	// spinner.style.webkitTransform = 'rotateZ(-' + heading + 'deg)';
-	// lastHeading = heading;
-}, false);
+		}, false);
 
 		this.fire('compass_activated');
 	},
