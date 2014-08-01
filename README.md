@@ -5,6 +5,8 @@ A leaflet control plugin to make simple rotating compass
 
 Tested in Leaflet 0.7
 
+require only HTML5 API
+
 **Tested platforms:**
 * Safari on iOS 7
 
