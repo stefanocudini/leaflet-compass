@@ -15,9 +15,9 @@
   "license": "MIT",
   "keywords": [
     "gis",
-    "map",
-    "compass",
-    "leaflet"
+    "maps",
+    "leaflet",
+	"html5"
   ],
   "dependencies": {
     "leaflet": "*"
