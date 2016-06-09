@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
-	api.add_files('dist/leaflet-compass.src.js', 'client');
-	api.add_files('dist/leaflet-compass.src.css', 'client');
-	api.add_files('images/compass-icon.png', 'client');
+	api.addFiles('dist/leaflet-compass.src.js', 'client');
+	api.addFiles('dist/leaflet-compass.src.css', 'client');
+	api.addAssets('images/compass-icon.png', 'client');
 });
