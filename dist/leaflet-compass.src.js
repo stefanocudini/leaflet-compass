@@ -1,5 +1,5 @@
 /* 
- * Leaflet Control Compass v0.0.1 - 2014-07-13 
+ * Leaflet Control Compass v1.0.0 - 2016-10-29 
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
@@ -59,12 +59,15 @@ L.Control.Compass = L.Control.extend({
 			
 		var container = L.DomUtil.create('div', 'leaflet-compass');
 
-		this._button = L.DomUtil.create('a', 'compass-button', container);
+		this._button = L.DomUtil.create('span', 'compass-button', container);
 		this._button.href = '#';
 
 		this._divcompass = L.DomUtil.create('div', 'compass-icon', this._button);
 		this._divcompass.src = 'images/compass-icon.png';
 		//TODO change button from rotating image
+
+		this._digit = L.DomUtil.create('span', 'compass-text', this._button);
+		this._digit.innerHTML = '&nbsp;';
 
 		L.DomEvent
 			.on(this._button, 'click', L.DomEvent.stop, this)
@@ -98,9 +101,19 @@ L.Control.Compass = L.Control.extend({
 		return this._currentAngle;
 	},
 
+	_debouncer: function(func) {
+		var timeoutID;
+		return function () {
+			var self = this , args = arguments;
+			clearTimeout( timeoutID );
+			timeoutID = setTimeout( function () {
+				func.apply( self , Array.prototype.slice.call( args ) );
+			}, 300);
+		};
+	},
+
 	activate: function() {
 		this._isActive = true;
-
 		this._divcompass.style.display = 'block';
 
 		//API DOC
@@ -109,7 +122,15 @@ L.Control.Compass = L.Control.extend({
 		var self = this;
 		window.addEventListener('deviceorientation', function(e) {
 			
-			self._rotateCompass(e.webkitCompassHeading);
+			var angle;
+
+			if(e.webkitCompassHeading)	//iphone
+				angle = 360 - e.webkitCompassHeading;
+
+			else if(e.alpha)			//android
+				angle = e.alpha;
+
+			self._rotateCompass(angle);
 
 		}, false);
 
@@ -117,12 +138,13 @@ L.Control.Compass = L.Control.extend({
 	},
 
 	_rotateCompass: function(angle) {
+		
+		if (!isNaN(parseFloat(angle)) && isFinite(angle))
+			this._digit.innerHTML = angle.toFixed(1);
 
-//L.DomUtil.get('copy').innerHTML = angle;
-
-		angle = 360 - angle;
-
-		this._divcompass.style.webkitTransform = "rotate(" + angle + "deg)";
+		this._divcompass.style.webkitTransform = "rotate("+ angle +"deg)";
+		this._divcompass.style.MozTransform = "rotate("+ angle +"deg)";
+		this._divcompass.style.transform = "rotate("+ angle +"deg)";
 
 		this._currentAngle = angle;
 

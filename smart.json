@@ -1,8 +1,0 @@
-{
-	"name": "leaflet-compass",
-	"version": "0.0.1",	
-	"description": "A leaflet control plugin to make simple rotating compass",
-	"homepage": "http://labs.easyblog.it/maps/leaflet-compass/",
-	"author": "Stefano Cudini <stefano.cudini@gmail.com>",
-	"git": "https://github.com/stefanocudini/leaflet-compass.git"
-}

@@ -1,7 +1,7 @@
 Package.describe({
 	summary: "Leaflet Control Compass",
 	name: "stefcud:leaflet-compass",
-	version: "0.0.1",
+	version: "1.0.0",
 	git: "https://github.com/stefanocudini/leaflet-compass.git"
 });
 
