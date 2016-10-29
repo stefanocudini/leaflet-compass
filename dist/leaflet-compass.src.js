@@ -1,5 +1,5 @@
 /* 
- * Leaflet Control Compass v1.0.0 - 2016-10-29 
+ * Leaflet Control Compass v1.1.0 - 2016-10-29 
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
@@ -14,8 +14,20 @@
  * git@github.com:stefanocudini/leaflet-compass.git 
  * 
  */
-
-(function() {
+(function (factory) {
+    if(typeof define === 'function' && define.amd) {
+    //AMD
+        define(['leaflet'], factory);
+    } else if(typeof module !== 'undefined') {
+    // Node/CommonJS
+        module.exports = factory(require('leaflet'));
+    } else {
+    // Browser globals
+        if(typeof window.L === 'undefined')
+            throw 'Leaflet must be loaded first';
+        factory(window.L);
+    }
+})(function (L) {
 
 L.Control.Compass = L.Control.extend({
 
@@ -39,6 +51,7 @@ L.Control.Compass = L.Control.extend({
 		autoActive: true,		//activate control at startup
 		textErr: null,			//error message on alert notification
 		callErr: null,			//function that run on compass error activating
+		showDigit: false,		//show angle value bottom compass
 		position: 'topright'
 		//TODO timeout autoActive
 	},
@@ -66,8 +79,7 @@ L.Control.Compass = L.Control.extend({
 		this._divcompass.src = 'images/compass-icon.png';
 		//TODO change button from rotating image
 
-		this._digit = L.DomUtil.create('span', 'compass-text', this._button);
-		this._digit.innerHTML = '&nbsp;';
+		this._digit = L.DomUtil.create('span', 'compass-digit', this._button);
 
 		L.DomEvent
 			.on(this._button, 'click', L.DomEvent.stop, this)
@@ -139,7 +151,7 @@ L.Control.Compass = L.Control.extend({
 
 	_rotateCompass: function(angle) {
 		
-		if (!isNaN(parseFloat(angle)) && isFinite(angle))
+		if(this.options.showDigit && !isNaN(parseFloat(angle)) && isFinite(angle))
 			this._digit.innerHTML = angle.toFixed(1);
 
 		this._divcompass.style.webkitTransform = "rotate("+ angle +"deg)";
@@ -183,4 +195,6 @@ L.control.compass = function (options) {
 	return new L.Control.Compass(options);
 };
 
-}).call(this);
+return L.Control.Compass;
+
+});

@@ -1,4 +1,4 @@
 Tasks found in: src/leaflet-compass.js
-    [Line: 27] [low] 		//TODO timeout autoActive
-    [Line: 51] [low] 		//TODO change button from rotating image
-    [Line: 149] [low] 		//TODO STOP COMPASS ENGINE this._map.stopLocate();
+    [Line: 40] [low] 		//TODO timeout autoActive
+    [Line: 64] [low] 		//TODO change button from rotating image
+    [Line: 161] [low] 		//TODO STOP COMPASS ENGINE this._map.stopLocate();
