@@ -20,9 +20,8 @@ L.Control.Compass = L.Control.extend({
 	//Managed Events:
 	//	Event				Data passed		Description
 	//
-	//	compass_loaded		{angle}			fired after compass data is loaded
-	//	compass_activated					fired when compass is activated
-	//	compass_deactivated					fired when compass is deactivated
+	//	compass:loaded		{angle}			fired after compass data is loaded
+	//	compass:disabled					fired when compass is disabled
 	//
 	//Methods exposed:
 	//	Method 			Description
@@ -129,8 +128,6 @@ L.Control.Compass = L.Control.extend({
 			self._rotateCompass(angle);
 
 		}, false);
-
-		this.fire('compass_activated');
 	},
 
 	_rotateCompass: function(angle) {
@@ -144,7 +141,7 @@ L.Control.Compass = L.Control.extend({
 
 		this._currentAngle = angle;
 
-		this.fire('compasslocated', {angle: angle});
+		this.fire('compass:loaded', {angle: angle});
 		
 		L.DomUtil.addClass(this._button, 'active');	
 	},
@@ -161,7 +158,7 @@ L.Control.Compass = L.Control.extend({
 		//TODO STOP COMPASS ENGINE this._map.stopLocate();
 
 		L.DomUtil.removeClass(this._button, 'active');
-		this.fire('compass_deactivated');
+		this.fire('compass:disabled');
 	},
 
 	showAlert: function(text) {
