@@ -27,6 +27,7 @@ L.Control.Compass = L.Control.extend({
 	//	Method 			Description
 	//
 	//  getAngle		return Azimut angle
+	//  setAngle		set rotation compass
 	//  activate		active tracking on runtime
 	//  deactivate		deactive tracking on runtime
 	//
