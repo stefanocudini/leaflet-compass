@@ -123,16 +123,19 @@ L.Control.Compass = L.Control.extend({
 		this._errorFunc.call(this, this.options.textErr || e.message);
 	},
 
+	_rotateElement: function(el) {
+		el.style.webkitTransform = "rotate("+ this._currentAngle +"deg)";
+		el.style.MozTransform = "rotate("+ this._currentAngle +"deg)";
+		el.style.transform = "rotate("+ this._currentAngle +"deg)";
+	},
+
 	setAngle: function(angle) {
 		
 		if(this.options.showDigit && !isNaN(parseFloat(angle)) && isFinite(angle))
 			this._digit.innerHTML = angle+'°';
 
-		this._icon.style.webkitTransform = "rotate("+ angle +"deg)";
-		this._icon.style.MozTransform = "rotate("+ angle +"deg)";
-		this._icon.style.transform = "rotate("+ angle +"deg)";
-
 		this._currentAngle = angle;
+		this._rotateElement( this._icon );
 
 		this.fire('compass:rotated', {angle: angle});
 	},
