@@ -25,6 +25,28 @@ map.addControl( new L.Control.Compass() );
 
 ```
 
+#Settings
+
+* **position** position of control inside map
+* **autoActive** activate control at startup
+* **showDigit** show angle value bottom compass
+* **textErr** error message on alert notification
+* **callErr** function that run on compass error activating
+* **angleOffset** min angle deviation before rotate, big angleOffset is need for device have noise in orientation sensor
+
+#Methods
+
+* **getAngle** return Azimut angle
+* **setAngle** set rotation compass
+* **activate** active tracking on runtime
+* **deactivate** deactive tracking on runtime
+
+#Events
+
+* **compass:rotated** fired after compass data is rotated
+* **compass:disabled** fired when compass is disabled
+
+
 #Where
 
 **Source code:**
