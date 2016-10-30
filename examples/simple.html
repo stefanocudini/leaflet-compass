@@ -12,6 +12,7 @@
 <body>
 <h3 style=""><big>◄</big> <a href="../">Leaflet.Control.Compass</a></h3> 
 Simple Example: <em>auto rotating compass</em>
+
 <div id="map"></div>
 
 <script src="/maps/leaflet/dist/leaflet.js"></script>
@@ -22,7 +23,9 @@ Simple Example: <em>auto rotating compass</em>
 
 	map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));	//base layer
 
-	map.addControl( new L.Control.Compass() );//inizialize control
+	var comp = new L.Control.Compass();
+
+	map.addControl(comp);
 
 </script>
 

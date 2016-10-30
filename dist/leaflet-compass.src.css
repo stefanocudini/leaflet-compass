@@ -1,5 +1,5 @@
 /* 
- * Leaflet Control Compass v1.2.0 - 2016-10-29 
+ * Leaflet Control Compass v1.4.0 - 2016-10-30 
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
@@ -44,6 +44,9 @@
 	width: 32px;
 	margin: 2px;
 	background: url('../images/compass-icon.png') center center no-repeat;
+}
+
+.leaflet-compass .compass-digit {
 }
 
 .leaflet-compass .compass-alert {

@@ -1,6 +1,6 @@
 {
   "name": "leaflet-compass",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "A leaflet control plugin to make simple rotating compass",
   "repository": {
     "type": "git",

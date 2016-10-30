@@ -30,6 +30,9 @@
 	background: url('../images/compass-icon.png') center center no-repeat;
 }
 
+.leaflet-compass .compass-digit {
+}
+
 .leaflet-compass .compass-alert {
 	position:absolute;
 	left:26px;
