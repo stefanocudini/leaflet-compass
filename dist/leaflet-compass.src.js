@@ -1,5 +1,5 @@
 /* 
- * Leaflet Control Compass v1.4.0 - 2016-10-30 
+ * Leaflet Control Compass v1.4.1 - 2016-10-30 
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
@@ -67,6 +67,8 @@ L.Control.Compass = L.Control.extend({
 
 	onAdd: function (map) {
 
+		var self = this;
+
 		this._map = map;	
 			
 		var container = L.DomUtil.create('div', 'leaflet-compass');
@@ -77,12 +79,16 @@ L.Control.Compass = L.Control.extend({
 		this._icon = L.DomUtil.create('div', 'compass-icon', this._button);
 		this._digit = L.DomUtil.create('span', 'compass-digit', this._button);
 
+		this._alert = L.DomUtil.create('div', 'compass-alert', container);
+		this._alert.style.display = 'none';
+
 		L.DomEvent
 			.on(this._button, 'click', L.DomEvent.stop, this)
 			.on(this._button, 'click', this._switchCompass, this);
 
-		this._alert = L.DomUtil.create('div', 'compass-alert', container);
-		this._alert.style.display = 'none';
+		L.DomEvent.on(window, 'compassneedscalibration', function(e) {
+			self.showAlert('Your compass needs calibrating! Wave your device in a figure-eight motion');
+		}, this);
 
 		if(this.options.autoActive)
 			this.activate();

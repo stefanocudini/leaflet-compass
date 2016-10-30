@@ -1,6 +1,6 @@
 {
 	"name": "leaflet-compass",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"main": [
 		"dist/leaflet-compass.min.js",
 		"dist/leaflet-compass.min.css",
