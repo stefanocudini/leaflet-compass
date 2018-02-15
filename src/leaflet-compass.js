@@ -15,7 +15,7 @@
 
 L.Control.Compass = L.Control.extend({
 
-	includes: L.Mixin.Events, 
+	includes: L.version[0] =='1' ? L.Evented.prototype : L.Mixin.Events,
 	//
 	//Managed Events:
 	//	Event				Data passed		Description
