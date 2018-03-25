@@ -27,12 +27,14 @@ map.addControl( new L.Control.Compass() );
 
 # Options
 
-* **position** position of control inside map
-* **autoActive** activate control at startup
-* **showDigit** show angle value bottom compass
-* **textErr** error message on alert notification
-* **callErr** function that run on compass error activating
-* **angleOffset** min angle deviation before rotate, big angleOffset is need for device have noise in orientation sensor
+| Option	  | Default  | Description                   |
+| ----------- | -------- | ----------------------------- |
+| autoActive  | false | activate control at startup |
+| showDigit	  | true | show angle value bottom compass |
+| textErr	  | ''   | error message on alert notification |
+| callErr	  | null | function that run on compass error activating |
+| angleOffset | 2 | min angle deviation before rotate, big angleOffset is need for device have noise in orientation sensor |
+| position	  | 'topright' | position of control inside map |
 
 # Methods
 
