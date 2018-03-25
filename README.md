@@ -16,7 +16,7 @@ require only HTML5 API
 
 ![Image](https://raw.githubusercontent.com/stefanocudini/leaflet-compass/master/images/leaflet-compass.png)
 
-#How to use
+# Usage
 
 Adding the Compass Control to the map:
 
@@ -25,7 +25,7 @@ map.addControl( new L.Control.Compass() );
 
 ```
 
-#Settings
+# Options
 
 * **position** position of control inside map
 * **autoActive** activate control at startup
@@ -34,20 +34,20 @@ map.addControl( new L.Control.Compass() );
 * **callErr** function that run on compass error activating
 * **angleOffset** min angle deviation before rotate, big angleOffset is need for device have noise in orientation sensor
 
-#Methods
+# Methods
 
 * **getAngle** return Azimut angle
 * **setAngle** set rotation compass
 * **activate** active tracking on runtime
 * **deactivate** deactive tracking on runtime
 
-#Events
+# Events
 
 * **compass:rotated** fired after compass data is rotated
 * **compass:disabled** fired when compass is disabled
 
 
-#Where
+# Where
 
 **Source code:**
 
