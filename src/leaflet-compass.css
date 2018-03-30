@@ -34,8 +34,8 @@
 
 .leaflet-compass .compass-alert {
 	position:absolute;
-	left:26px;
-	bottom:-1px;
+	right:0;
+	bottom:-30px;
 	width:100px;
 	padding:2px;
 	line-height:.95em;

@@ -1,5 +1,5 @@
 /* 
- * Leaflet Control Compass v1.5.1 - 2018-03-25 
+ * Leaflet Control Compass v1.5.2 - 2018-03-30 
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
@@ -50,8 +50,8 @@ L.Control.Compass = L.Control.extend({
 	options: {
 		position: 'topright',	//position of control inside map
 		autoActive: false,		//activate control at startup
-		showDigit: true,		//show angle value bottom compass
-		textErr: null,			//error message on alert notification
+		showDigit: false,		//show angle value bottom compass
+		textErr: '',			//error message on alert notification
 		callErr: null,			//function that run on compass error activating
 		angleOffset: 2			//min angle deviation before rotate
 		/* big angleOffset is need for device have noise in orientation sensor */

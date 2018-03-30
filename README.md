@@ -14,7 +14,7 @@ require HTML5 API on mobile device!
 **Demo online:**  
 [labs.easyblog.it/maps/leaflet-compass](http://labs.easyblog.it/maps/leaflet-compass/)
 
-![Image](https://raw.githubusercontent.com/stefanocudini/leaflet-compass/master/images/leaflet-compass.png)
+![Image](./images/leaflet-compass.png)
 
 # Usage
 

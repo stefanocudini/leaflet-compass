@@ -34,7 +34,7 @@ L.Control.Compass = L.Control.extend({
 	options: {
 		position: 'topright',	//position of control inside map
 		autoActive: false,		//activate control at startup
-		showDigit: true,		//show angle value bottom compass
+		showDigit: false,		//show angle value bottom compass
 		textErr: '',			//error message on alert notification
 		callErr: null,			//function that run on compass error activating
 		angleOffset: 2			//min angle deviation before rotate
