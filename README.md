@@ -5,7 +5,7 @@ A leaflet control plugin to make simple rotating compass
 
 Tested in Leaflet 0.7 and 1.2
 
-require only HTML5 API
+require HTML5 API on mobile device!
 
 **Tested platforms:**
 * Chrome on Android
