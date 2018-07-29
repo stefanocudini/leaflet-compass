@@ -38,15 +38,20 @@ map.addControl( new L.Control.Compass() );
 
 # Methods
 
-* **getAngle** return Azimut angle
-* **setAngle** set rotation compass
-* **activate** active tracking on runtime
-* **deactivate** deactive tracking on runtime
+| Method	  | Arguments      | Description                   |
+| ----------- | -------------- | ----------------------------- |
+| autoActive  | false          | activate control at startup   |
+| getAngle    |                | return Azimut angle           |
+| setAngle    | Numeric angle  | set rotation compass          |
+| activate    |                | active tracking on runtime    |
+| deactivate  |                | deactive tracking on runtime  |
 
 # Events
 
-* **compass:rotated** fired after compass data is rotated
-* **compass:disabled** fired when compass is disabled
+| Event	            | Data           | Description                         |
+| ----------------- | -------------- | ----------------------------------- |
+| 'compass:rotated' | angle          | fired after compass data is rotated |
+| 'compass:disabled'|                | fired when compass is disabled      |
 
 
 # Where
