@@ -42,7 +42,7 @@ map.addControl( new L.Control.Compass() );
 | ----------- | -------------- | ----------------------------- |
 | autoActive  | false          | activate control at startup   |
 | getAngle    |                | return Azimut angle           |
-| setAngle    | Numeric angle  | set rotation compass          |
+| setAngle    | angle          | set rotation compass          |
 | activate    |                | active tracking on runtime    |
 | deactivate  |                | deactive tracking on runtime  |
 
