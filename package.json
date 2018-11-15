@@ -19,6 +19,7 @@
     "leaflet",
     "html5"
   ],
+  "main": "src/leaflet-compass.js",
   "dependencies": {
     "leaflet": "*"
   },
