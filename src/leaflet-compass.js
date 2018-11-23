@@ -78,6 +78,21 @@ L.Control.Compass = L.Control.extend({
 		if(this.options.autoActive)
 			this.activate();
 
+		//this._map.dragging.disable();
+		
+/*		var map = this._map; 
+		map.on('moveend', function(e) {
+			var p = L.point(e.clientX,e.clientY);
+			var ll = map.containerPointToLatLng(p);
+			L.marker(ll).addTo(map)
+			console.log(ll)
+			//map.setView(ll, {animate:false})
+		});*/
+/*
+		this._map.on('click', function(e){
+			this.addLayer(L.marker(e.latlng))
+		});*/
+
 		return container;
 	},
 
@@ -124,9 +139,13 @@ L.Control.Compass = L.Control.extend({
 	},
 
 	_rotateElement: function(el) {
-		el.style.webkitTransform = "rotate("+ this._currentAngle +"deg)";
-		el.style.MozTransform = "rotate("+ this._currentAngle +"deg)";
-		el.style.transform = "rotate("+ this._currentAngle +"deg)";
+		var e = el;
+		
+		e = this._map.getContainer();
+		
+		e.style.webkitTransform = "rotate("+ this._currentAngle +"deg)";
+		e.style.MozTransform = "rotate("+ this._currentAngle +"deg)";
+		e.style.transform = "rotate("+ this._currentAngle +"deg)";
 	},
 
 	setAngle: function(angle) {

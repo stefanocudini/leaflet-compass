@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>Leaflet.Control.Compass - Simple Example</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link rel="stylesheet" href="/maps/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="../src/leaflet-compass.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+<div id="mouserot" style="width: 360px;height: 60px;background: blue"></div>
+
+
+<div id="map" style="margin-top:100px;width: 400px;height:400px"></div>
+
+<script src="/maps/leaflet/dist/leaflet.js"></script>
+<script src="../src/leaflet-compass.js"></script>
+<script>
+
+	var map = new L.Map('map', {zoom: 12, center: new L.latLng([42.5,12.5]) });
+
+	map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));	//base layer
+
+	var comp = new L.Control.Compass({autoActive: true, showDigit:true});
+
+	map.addControl(comp);
+
+	L.DomEvent.on(L.DomUtil.get('mouserot'), 'mousemove', function(e) {
+		var x = e.clientX;
+
+		comp.setAngle(x);
+	})
+
+</script>
+
+</body>
+</html>
