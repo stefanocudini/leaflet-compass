@@ -1,5 +1,5 @@
 /* 
- * Leaflet Control Compass v1.5.2 - 2018-03-30 
+ * Leaflet Control Compass v1.5.3 - 2018-11-23 
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
