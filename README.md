@@ -1,6 +1,9 @@
 Leaflet.Control.Compass
 ============
 
+[![npm version](https://badge.fury.io/js/leaflet-compass.svg)](http://badge.fury.io/js/leaflet-compass)
+
+
 A leaflet control plugin to make simple rotating compass
 
 Tested in Leaflet 0.7 and 1.2
