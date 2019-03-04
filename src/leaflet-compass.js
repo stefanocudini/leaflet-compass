@@ -141,7 +141,7 @@ L.Control.Compass = L.Control.extend({
 	_rotateElement: function(el) {
 		var e = el;
 		
-		e = this._map.getContainer();
+		//DEBUG e = this._map.getContainer();
 		
 		e.style.webkitTransform = "rotate("+ this._currentAngle +"deg)";
 		e.style.MozTransform = "rotate("+ this._currentAngle +"deg)";
