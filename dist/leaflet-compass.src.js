@@ -1,5 +1,5 @@
 /* 
- * Leaflet Control Compass v1.5.2 - 2018-03-30 
+ * Leaflet Control Compass v1.5.5 - 2019-03-04 
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
@@ -94,6 +94,21 @@ L.Control.Compass = L.Control.extend({
 		if(this.options.autoActive)
 			this.activate();
 
+		//this._map.dragging.disable();
+		
+/*		var map = this._map; 
+		map.on('moveend', function(e) {
+			var p = L.point(e.clientX,e.clientY);
+			var ll = map.containerPointToLatLng(p);
+			L.marker(ll).addTo(map)
+			console.log(ll)
+			//map.setView(ll, {animate:false})
+		});*/
+/*
+		this._map.on('click', function(e){
+			this.addLayer(L.marker(e.latlng))
+		});*/
+
 		return container;
 	},
 
@@ -119,11 +134,14 @@ L.Control.Compass = L.Control.extend({
 
 		if(!this._isActive) return false;
 
-		if(e.webkitCompassHeading)	//iphone
+		if(e.webkitCompassHeading) {	//iphone
 			angle = 360 - e.webkitCompassHeading;
-
-		else if(e.alpha)			//android
-			angle = e.alpha;
+			this._compassIphone = true;
+		}
+		else if(e.alpha)	{		//android
+			angle = e.alpha-180;
+			this._compassAndroid = true;
+		}
 		else {
 			this._errorCompass({message: 'Orientation angle not found'});
 		}
@@ -139,16 +157,21 @@ L.Control.Compass = L.Control.extend({
 		this._errorFunc.call(this, this.options.textErr || e.message);
 	},
 
-	_rotateElement: function(el) {
-		el.style.webkitTransform = "rotate("+ this._currentAngle +"deg)";
-		el.style.MozTransform = "rotate("+ this._currentAngle +"deg)";
-		el.style.transform = "rotate("+ this._currentAngle +"deg)";
+	_rotateElement: function(e) {
+		var ang = this._currentAngle;
+		//DEBUG e = this._map.getContainer();
+		//
+		e.style.webkitTransform = "rotate("+ ang +"deg)";
+		e.style.MozTransform = "rotate("+ ang +"deg)";
+		e.style.transform = "rotate("+ ang +"deg)";
 	},
 
 	setAngle: function(angle) {
 		
-		if(this.options.showDigit && !isNaN(parseFloat(angle)) && isFinite(angle))
-			this._digit.innerHTML = angle+'°';
+		if(this.options.showDigit && !isNaN(parseFloat(angle)) && isFinite(angle)) {
+
+			this._digit.innerHTML = (-angle)+'°';
+		}
 
 		this._currentAngle = angle;
 		this._rotateElement( this._icon );
