@@ -1,7 +1,7 @@
 Leaflet.Control.Compass
 ============
 
-[![npm version](https://badge.fury.io/js/leaflet-compass.svg)](http://badge.fury.io/js/leaflet-compass)
+[![npm version](https://badge.fury.io/js/leaflet-compass.svg)](https://badge.fury.io/js/leaflet-compass)
 
 
 A leaflet control plugin to make simple rotating compass
@@ -15,7 +15,7 @@ require HTML5 API on mobile device!
 * Safari on iOS
 
 **Demo online:**  
-[labs.easyblog.it/maps/leaflet-compass](http://labs.easyblog.it/maps/leaflet-compass/)
+[opengeo.tech/maps/leaflet-compass](https://opengeo.tech/maps/leaflet-compass/)
 
 ![Image](./images/leaflet-compass.png)
 

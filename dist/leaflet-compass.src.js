@@ -3,12 +3,12 @@
  * 
  * Copyright 2014 Stefano Cudini 
  * stefano.cudini@gmail.com 
- * http://labs.easyblog.it/ 
+ * https://opengeo.tech/ 
  * 
  * Licensed under the MIT license. 
  * 
  * Demos: 
- * http://labs.easyblog.it/maps/leaflet-compass/ 
+ * https://opengeo.tech/maps/leaflet-compass/ 
  * 
  * Source: 
  * git@github.com:stefanocudini/leaflet-compass.git 
