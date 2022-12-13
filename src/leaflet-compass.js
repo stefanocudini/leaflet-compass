@@ -97,48 +97,56 @@ L.Control.Compass = L.Control.extend({
 			this.activate();
 	},
 
-	_rotateHandler: function(e) {
+  _rotateHandler: function(e) {
 
-		var self = this, angle;
+    var self = this, angle;
 
-		if(!this._isActive) return false;
+    if(!this._isActive) return false;
 
-		if(e.webkitCompassHeading)	//iphone
-			angle = 360 - e.webkitCompassHeading;
+    if(e.webkitCompassHeading) {  //iphone
+      angle = 360 - e.webkitCompassHeading;
+      this._compassIphone = true;
+    }
+    else if(e.alpha)  {   //android
+      angle = e.alpha-180;
+      this._compassAndroid = true;
+    }
+    else {
+      this._errorCompass({message: 'Orientation angle not found'});
+    }
 
-		else if(e.alpha)			//android
-			angle = e.alpha;
-		else {
-			this._errorCompass({message: 'Orientation angle not found'});
-		}
+    angle = Math.round(angle);
 
-		angle = Math.round(angle);
+    if(angle % this.options.angleOffset === 0)
+      self.setAngle(angle);
+  },
 
-		if(angle % this.options.angleOffset === 0)
-			self.setAngle(angle);
-	},
+  _errorCompass: function(e) {
+    this.deactivate();
+    this._errorFunc.call(this, this.options.textErr || e.message);
+  },
 
-	_errorCompass: function(e) {
-		this.deactivate();
-		this._errorFunc.call(this, this.options.textErr || e.message);
-	},
+  _rotateElement: function(e) {
+    var ang = this._currentAngle;
+    //DEBUG e = this._map.getContainer();
+    //
+    e.style.webkitTransform = "rotate("+ ang +"deg)";
+    e.style.MozTransform = "rotate("+ ang +"deg)";
+    e.style.transform = "rotate("+ ang +"deg)";
+  },
 
-	_rotateElement: function(el) {
-		el.style.webkitTransform = "rotate("+ this._currentAngle +"deg)";
-		el.style.MozTransform = "rotate("+ this._currentAngle +"deg)";
-		el.style.transform = "rotate("+ this._currentAngle +"deg)";
-	},
+  setAngle: function(angle) {
 
-	setAngle: function(angle) {
+    if(this.options.showDigit && !isNaN(parseFloat(angle)) && isFinite(angle)) {
 
-		if(this.options.showDigit && !isNaN(parseFloat(angle)) && isFinite(angle))
-			this._digit.innerHTML = angle+'°';
+      this._digit.innerHTML = (-angle)+'°';
+    }
 
-		this._currentAngle = angle;
-		this._rotateElement( this._icon );
+    this._currentAngle = angle;
+    this._rotateElement( this._icon );
 
-		this.fire('compass:rotated', {angle: angle});
-	},
+    this.fire('compass:rotated', {angle: angle});
+  },
 
 	getAngle: function() {	//get last angle
 		return this._currentAngle;
