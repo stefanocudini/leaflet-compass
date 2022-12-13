@@ -174,8 +174,9 @@ L.Control.Compass = L.Control.extend({
 				if (isAutoActivation !== true)
 					alert('Error activating compass: ' + reason);
 			    });
-		} else
+		} else {
 			this._activate();
+    }
 	},
 
 	deactivate: function() {

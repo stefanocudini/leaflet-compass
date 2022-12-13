@@ -105,7 +105,7 @@ grunt.registerTask('default', [
 	'cssmin',
 	'jshint',
 	'uglify',
-	'svg2png',
+	//'svg2png',
 	'todos'
 ]);
 
@@ -116,7 +116,7 @@ grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-contrib-watch');
-grunt.loadNpmTasks('grunt-svg2png');
+//grunt.loadNpmTasks('grunt-svg2png');
 grunt.loadNpmTasks('grunt-todos');
 
 };
