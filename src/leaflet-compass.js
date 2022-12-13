@@ -43,7 +43,7 @@ L.Control.Compass = L.Control.extend({
 
 	initialize: function(options) {
 		if(options && options.style)
-			options.style = L.Util.extend({}, this.options.style, options.style); 
+			options.style = L.Util.extend({}, this.options.style, options.style);
 		L.Util.setOptions(this, options);
 		this._errorFunc = this.options.callErr || this.showAlert;
 		this._isActive = false;//global state of compass
@@ -54,8 +54,8 @@ L.Control.Compass = L.Control.extend({
 
 		var self = this;
 
-		this._map = map;	
-			
+		this._map = map;
+
 		var container = L.DomUtil.create('div', 'leaflet-compass');
 
 		this._button = L.DomUtil.create('span', 'compass-button', container);
@@ -82,9 +82,9 @@ L.Control.Compass = L.Control.extend({
 	},
 
 	onRemove: function(map) {
-		
+
 		this.deactivate();
-		
+
 		L.DomEvent
 			.off(this._button, 'click', L.DomEvent.stop, this)
 			.off(this._button, 'click', this._switchCompass, this);
@@ -111,7 +111,7 @@ L.Control.Compass = L.Control.extend({
 		else {
 			this._errorCompass({message: 'Orientation angle not found'});
 		}
-		
+
 		angle = Math.round(angle);
 
 		if(angle % this.options.angleOffset === 0)
@@ -130,7 +130,7 @@ L.Control.Compass = L.Control.extend({
 	},
 
 	setAngle: function(angle) {
-		
+
 		if(this.options.showDigit && !isNaN(parseFloat(angle)) && isFinite(angle))
 			this._digit.innerHTML = angle+'°';
 
@@ -139,22 +139,38 @@ L.Control.Compass = L.Control.extend({
 
 		this.fire('compass:rotated', {angle: angle});
 	},
-	
+
 	getAngle: function() {	//get last angle
 		return this._currentAngle;
 	},
 
-	activate: function() {
-
+	_activate: function () {
 		this._isActive = true;
 
 		L.DomEvent.on(window, 'deviceorientation', this._rotateHandler, this);
-		
+
 		L.DomUtil.addClass(this._button, 'active');
 	},
 
+	activate: function () {
+		if (typeof(DeviceOrientationEvent) !== 'undefined' &&
+		    typeof(DeviceOrientationEvent.requestPermission) === 'function') {
+			/* iPhoneOS, must ask interactively */
+			var that = this;
+			DeviceOrientationEvent.requestPermission().then(function (permission) {
+				if (permission === 'granted')
+					that._activate();
+				else
+					alert('Cannot activate compass: permission ' + permission);
+			    }, function (reason) {
+				alert('Error activating compass: ' + reason);
+			    });
+		} else
+			this._activate();
+	},
+
 	deactivate: function() {
-		
+
 		this.setAngle(0);
 
 		this._isActive = false;
