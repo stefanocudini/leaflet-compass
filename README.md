@@ -10,12 +10,16 @@ Tested in Leaflet 0.7 and 1.2
 
 require HTML5 API on mobile device!
 
+
+**Try the Demo online here:**  
+[opengeo.tech/maps/leaflet-compass](https://opengeo.tech/maps/leaflet-compass/)
+
 **Tested platforms:**
+
+this project needs many tests on different devices, please help us using the demo page and report problems by opening an issue.
+
 * Chrome on Android
 * Safari on iOS
-
-**Demo online:**  
-[opengeo.tech/maps/leaflet-compass](https://opengeo.tech/maps/leaflet-compass/)
 
 ![Image](./images/leaflet-compass.png)
 
