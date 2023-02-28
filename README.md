@@ -6,6 +6,8 @@ Leaflet.Control.Compass
 
 A leaflet control plugin to make simple rotating compass
 
+If this project helped your work help me to keep this alive by [Paypal **DONATION &#10084;**](https://www.paypal.me/stefanocudini)
+
 Tested in Leaflet 0.7 and 1.2
 
 require HTML5 API on mobile device!
