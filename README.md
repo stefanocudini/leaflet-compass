@@ -68,6 +68,4 @@ map.addControl( new L.Control.Compass() );
 **Source code:**
 
 [Github](https://github.com/stefanocudini/leaflet-compass)  
-[Bitbucket](https://bitbucket.org/stefanocudini/leaflet-compass)  
-[Atmosphere](https://atmospherejs.com/package/leaflet-compass)
 [NPM](https://npmjs.org/package/leaflet-compass)
